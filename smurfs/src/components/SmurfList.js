@@ -2,7 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 
 import Smurf from "../components/Smurf";
-import SmurfForm from '../components/SmurfForm';
+import SmurfForm from "../components/SmurfForm";
 
 import { getSmurfs } from "../actions";
 
@@ -13,12 +13,12 @@ class SmurfList extends React.Component {
 
   render() {
     return (
-      <div>
-        <header>
+      <div className="App">
+        <header className="header">
           <h1>Behold your Village!</h1>
         </header>
         <SmurfForm />
-        <ul>
+        <ul className="smurfList">
           {this.props.smurfs.map(smurf => {
             return <Smurf key={smurf.name} smurf={smurf} />;
           })}
