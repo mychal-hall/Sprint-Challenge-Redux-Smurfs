@@ -4,6 +4,8 @@ import axios from "axios";
 export const ERROR = "ERROR";
 export const GET_SMURFS = "GET_SMURFS";
 export const GETTING_SMURFS = "GETTING_SMURFS";
+export const ADD_SMURF = "ADD_SMURF";
+export const ADDING_SMURF = "ADDING_SMURF";
 
 // action creators
 
@@ -11,6 +13,14 @@ export const getSmurfs = () => dispatch => {
   dispatch({ type: GETTING_SMURFS });
   axios
     .get("http://localhost:3333/smurfs/")
+    .then(response => dispatch({ type: GET_SMURFS, payload: response.data }))
+    .catch(error => dispatch({ type: ERROR, payload: error }));
+};
+
+export const addSmurf = smurf => dispatch => {
+  dispatch({ type: GETTING_SMURFS });
+  axios
+    .post("http://localhost:3333/smurfs/", smurf)
     .then(response => dispatch({ type: GET_SMURFS, payload: response.data }))
     .catch(error => dispatch({ type: ERROR, payload: error }));
 };
