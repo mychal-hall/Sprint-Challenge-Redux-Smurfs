@@ -6,6 +6,7 @@ import "./App.css";
 class SmurfForm extends Component {
   constructor(props) {
     super(props);
+    // Setting component state to include the fields we need to update the server
     this.state = {
       name: "",
       age: "",
