@@ -37,6 +37,7 @@
 
 .butn:hover {
   background: #ff6700; 
+  cursor: pointer;
 }
 
 .header {
